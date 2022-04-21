@@ -8,26 +8,26 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'home.css' %}">
 </head>
-<body>
+<body style="text-align: center;">
 
-    <h1>Don't want to read huge text? Make it shorter!</h1>
+    <h1 style="margin-top: 2.5%;">Don't want to read huge text? Make it shorter!</h1>
     
-    <form action="summary">
-        <textarea name="text" id="text" style="width:1100px;height:400px;"></textarea>
+    <form action="summary" style="display: flexbox; align-content: center;">
+        <textarea name="text" id="text" style="width:75%; height:400px; margin-top: 2%; margin-bottom: 2.5%; border-radius: 1%; box-shadow: 0px 30px 20px -10px rgba(0, 0, 0, 0.2); padding: 1%;" ></textarea>
         <br>
-        <div id="common">
-        <div id="one">
-        <div id="select">
+        <div id="common" style="display: flex; margin-left: 23%;">
+        <div id="one" style="align-items: flex-start; align-content: center; width: 46%; text-align: center;">
+        <div id="select" style="border-color: black;">
             <label style="margin-right: 3%; align-content: flex-start; vertical-align: middle; width:300px;  font-size: 22px;">Method Of Summarizing</label> 
-            <select name="method" id="method">
+            <select name="method" id="method" style="margin-top: 2%; width: 50%; height: 40px; font-size: 18px; margin-bottom: 10px; text-align-last: center; vertical-align: middle;">
                 <option value="1">Word Frequency</option>
                 <option value="2">Luhn Algorithm</option>
             </select>
         </div>
             <br>
-        <div id="select">
+        <div id="select" style="border-color: black;">
             <label style="margin-right: 3%; align-content: flex-start; vertical-align: middle; width:300px; font-size: 22px;">Size Of Summarized Text</label> 
-            <select name="size" id="size">
+            <select name="size" id="size" style="margin-top: 2%; width: 50%; height: 40px; font-size: 18px; margin-bottom: 10px; text-align-last: center; vertical-align: middle;">
                 <option value="1">25%</option>
                 <option value="2">50%</option>
                 <option value="3">75%</option>
@@ -35,11 +35,13 @@
         </div>
         </div>
         <br>
-        <div id="two">
-            <input type="submit" value="Summarize">
+        <div id="two" style="display: flex; justify-content: center; align-items: center; width: 30%; text-align: center;">
+            <input type="submit" value="Summarize" style="width: 65%; height: 60px; flex-shrink: 0; font-size: 24px; border: 5px dark;">
         </div>
         </div>
     </form>
 
 </body>
 </html>
+
+
