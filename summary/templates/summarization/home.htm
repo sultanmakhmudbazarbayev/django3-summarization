@@ -7,27 +7,33 @@
     <title>HomePage</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'home.css' %}">
+    <style>
+        input:hover {
+            background-color: mediumvioletred;
+        }
+    </style>
 </head>
-<body style="text-align: center;">
+<body style="background-color: slategray; text-align: center;">
 
-    <h1 style="margin-top: 2.5%;">Don't want to read huge text? Make it shorter!</h1>
+    <h1 style="color:white; font-family: Shanti; font-size: 5vh; overflow: auto; margin-top: 2.5%;">Don't want to read huge text? Make it shorter!</h1>
     
-    <form action="summary" style="display: flexbox; align-content: center;">
-        <textarea name="text" id="text" style="width:75%; height:400px; margin-top: 2%; margin-bottom: 2.5%; border-radius: 1%; box-shadow: 0px 30px 20px -10px rgba(0, 0, 0, 0.2); padding: 1%;" ></textarea>
+    <form method="post" id="new-request" action="summary" style="height: 65vh; display: flexbox; align-content: center;">
+        {% csrf_token %}
+        <textarea name="text" id="text" style=" background-color:lightgrey; border-color: brown; border-width: 5px; width:75%; height:80%; margin-top: 2%; margin-bottom: 2.5%; border-radius: 1%; box-shadow: 0px 30px 20px -10px rgba(0, 0, 0, 0.2); padding: 1%;" ></textarea>
         <br>
         <div id="common" style="display: flex; margin-left: 23%;">
         <div id="one" style="align-items: flex-start; align-content: center; width: 46%; text-align: center;">
         <div id="select" style="border-color: black;">
-            <label style="margin-right: 3%; align-content: flex-start; vertical-align: middle; width:300px;  font-size: 22px;">Method Of Summarizing</label> 
-            <select name="method" id="method" style="margin-top: 2%; width: 50%; height: 40px; font-size: 18px; margin-bottom: 10px; text-align-last: center; vertical-align: middle;">
+            <label style="color: white; margin-right: 3%; align-content: flex-start; vertical-align: middle; width:10vw;  font-size: 3vh; overflow: auto;">Method Of Summarizing</label> 
+            <select name="method" id="method" style="border-width: 3px; border-color: brown; border-radius: 5px; background-color: lightgrey; font-weight: bold; margin-top: 2%; width: 17.5vw; height: 5vh; font-size: 3vh; margin-bottom: 5px; text-align-last: center; vertical-align: middle;">
                 <option value="1">Word Frequency</option>
                 <option value="2">Luhn Algorithm</option>
             </select>
         </div>
             <br>
         <div id="select" style="border-color: black;">
-            <label style="margin-right: 3%; align-content: flex-start; vertical-align: middle; width:300px; font-size: 22px;">Size Of Summarized Text</label> 
-            <select name="size" id="size" style="margin-top: 2%; width: 50%; height: 40px; font-size: 18px; margin-bottom: 10px; text-align-last: center; vertical-align: middle;">
+            <label style="color: white; margin-right: 3%; align-content: flex-start; vertical-align: middle; width:10vw; font-size: 2.9vh;">Size Of Summarized Text</label> 
+            <select name="size" id="size" style="border-width: 3px; border-color: brown; border-radius: 5px; background-color: lightgrey; font-weight: bold; margin-top: 2%; width: 17vw; height: 5vh; font-size: 3vh; margin-bottom: 10px; text-align-last: center; vertical-align: middle;">
                 <option value="1">25%</option>
                 <option value="2">50%</option>
                 <option value="3">75%</option>
@@ -36,12 +42,16 @@
         </div>
         <br>
         <div id="two" style="display: flex; justify-content: center; align-items: center; width: 30%; text-align: center;">
-            <input type="submit" value="Summarize" style="width: 65%; height: 60px; flex-shrink: 0; font-size: 24px; border: 5px dark;">
+            <input name="hugetext" id="huge-text" type="submit" value="Summarize" style="border-color: brown; border-radius: 10px; color: white; background-color: palevioletred; font-weight: bold; width: 65%; height: 60px; flex-shrink: 0; font-size: 4vh; border-width: 4px;">
         </div>
         </div>
     </form>
 
 </body>
+
+
+
+
 </html>
 
 
