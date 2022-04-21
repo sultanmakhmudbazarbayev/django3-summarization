@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'summary.css' %}">
+</head>
+<body style="text-align: center;">
+    <h1 style="margin-top: 3%; margin-bottom: 1%; font-size: 40px; color: black;">Summary of the given text:</h1>
+    <p style="padding: 4%; margin-bottom: 10%; font-size: 22px;">{{ summary }}</p>
+    <form action="back">
+        <input type="submit" name="back" value="Back" style="width: 16%; height: 60px; font-size: 30px; border: 5px dark; position: fixed; bottom: 6%; left:42%; margin: 0;">
+    </form>
+</body>
+</html>
+
